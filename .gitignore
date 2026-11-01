@@ -1,0 +1,19 @@
+# Local previews and generated QA captures
+output/
+.playwright-cli/
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db
+# Local private files (never commit these)
+.env
+.env.*
+assets/private/
+# Reproducible static hosting output
+dist/
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
+  

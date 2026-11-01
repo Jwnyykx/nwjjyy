@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f5fc">
+  <meta name="description" content="nwjjyy 的小世界。一只奶白色的小兔子，一些慢慢收藏的声音与记忆。">
+  <title>nwjjyy</title>
+  <link rel="icon" href="./assets/icons/bunny-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./site-config.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="nwjjyy 首页">
+        <img src="./assets/icons/bunny-mark.svg" width="30" height="34" alt="">
+        <span id="site-title">nwjjyy</span><span class="brand-dot">1.0</span>
+      </a>
+      <nav class="main-nav" aria-label="主要导航">
+        <a class="nav-link is-active" href="#home">小兔子</a>
+        <a class="nav-link" href="#voice">声音记忆</a>
+        <a class="nav-link" href="#memories">我们的记忆</a>
+      </nav>
+      <span class="header-note"><span></span> 一个小小的专属世界</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="home" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-flower" aria-hidden="true">✳</span> A LITTLE WORLD, JUST FOR US</p>
+        <h1 id="welcome-title">欢迎来到 nwjjyy 的小世界</h1>
+        <p class="hero-subtitle" id="welcome-subtitle">这里藏着一些只属于我们的小惊喜。</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="pet-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v6-2a1.5 1.5 0 0 1 3 0v4c0 5-2.5 7-6.5 7-2.5 0-4-1-5.5-3l-4-5a1.6 1.6 0 0 1 2.3-2.2L8 13"/></svg>
+            摸摸小兔子 <span aria-hidden="true">↗</span>
+          </button>
+          <span class="interaction-hint">轻轻一点，看看它的反应</span>
+        </div>
+        <div class="hero-footnote"><span class="mini-sparkle" aria-hidden="true">✧</span> 不用着急，快乐可以慢慢收藏。</div>
+      </div>
+
+      <div class="bunny-stage" id="bunny-stage">
+        <div class="stage-orbit" aria-hidden="true"></div>
+        <div class="stage-halo" aria-hidden="true"></div>
+        <span class="stage-sparkle sparkle-one" aria-hidden="true">✧</span>
+        <span class="stage-sparkle sparkle-two" aria-hidden="true">✦</span>
+        <span class="stage-dot dot-one" aria-hidden="true"></span>
+        <span class="stage-dot dot-two" aria-hidden="true"></span>
+        <span class="stage-label"><span aria-hidden="true">●</span> 小兔子，在等你</span>
+        <div class="speech-bubble" id="speech-bubble" aria-hidden="true">你咋这样！</div>
+        <button class="bunny-button" id="bunny-button" type="button" aria-label="摸摸小兔子，看看它的小碎步">
+          <svg class="bunny-model" viewBox="0 65 1199 1190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <!-- One supplied model image; overlapping SVG crops keep its original fur. -->
+              <image id="bunny-texture" href="./assets/images/bunny-model.png" x="0" y="0" width="1199" height="1312"/>
+              <path id="ear-left-cut" d="M0 260H315L340 280C306 351 294 417 290 470C280 536 300 598 364 640C324 692 313 754 338 814C315 920 278 1000 190 1025H0Z"/>
+              <path id="ear-right-cut" d="M1199 245H854L828 273C855 358 878 445 879 514C882 565 862 607 830 640C878 700 888 764 854 833C895 962 955 1025 1087 1033H1199Z"/>
+              <path id="foot-left-cut" d="M318 1098Q447 1057 596 1100V1260H306Z"/>
+              <path id="foot-right-cut" d="M594 1100Q735 1065 874 1103V1260H594Z"/>
+              <clipPath id="clip-ear-left"><use href="#ear-left-cut"/></clipPath>
+              <clipPath id="clip-ear-right"><use href="#ear-right-cut"/></clipPath>
+              <clipPath id="clip-foot-left"><use href="#foot-left-cut"/></clipPath>
+              <clipPath id="clip-foot-right"><use href="#foot-right-cut"/></clipPath>
+              <clipPath id="clip-eye-left"><ellipse cx="438" cy="445" rx="52" ry="51"/></clipPath>
+              <clipPath id="clip-eye-right"><ellipse cx="749" cy="428" rx="53" ry="54"/></clipPath>
+              <mask id="bunny-body-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1199" height="1312">
+                <rect width="1199" height="1312" fill="white"/>
+                <g fill="black"><use href="#ear-left-cut"/><use href="#ear-right-cut"/><path d="M0 1135H1199V1312H0Z"/><ellipse cx="438" cy="445" rx="51" ry="50"/><ellipse cx="749" cy="428" rx="52" ry="53"/></g>
+              </mask>
+              <clipPath id="model-edge-trim"><rect x="10" y="77" width="1180" height="1168" rx="8"/></clipPath>
+            </defs>
+            <ellipse class="bunny-shadow" cx="603" cy="1242" rx="280" ry="14" fill="#9a79b5" opacity=".13"/>
+            <g class="bunny-character" clip-path="url(#model-edge-trim)">
+              <g class="bunny-ear-left" clip-path="url(#clip-ear-left)"><use href="#bunny-texture"/></g>
+              <g class="bunny-ear-right" clip-path="url(#clip-ear-right)"><use href="#bunny-texture"/></g>
+              <g class="bunny-body" mask="url(#bunny-body-mask)"><use href="#bunny-texture"/></g>
+              <!-- Fur sampled above each eye fills the lid while its eye crop blinks. -->
+              <g clip-path="url(#clip-eye-left)"><use href="#bunny-texture" y="125"/></g>
+              <g clip-path="url(#clip-eye-right)"><use href="#bunny-texture" y="125"/></g>
+              <g class="bunny-eyes"><g class="bunny-eye-left" clip-path="url(#clip-eye-left)"><use href="#bunny-texture"/></g><g class="bunny-eye-right" clip-path="url(#clip-eye-right)"><use href="#bunny-texture"/></g></g>
+              <g class="bunny-blush" opacity="0"><ellipse cx="346" cy="542" rx="65" ry="23" fill="#f2a6b0" opacity=".25"/><ellipse cx="837" cy="530" rx="65" ry="23" fill="#f2a6b0" opacity=".25"/></g>
+              <g class="bunny-foot-left" clip-path="url(#clip-foot-left)"><use href="#bunny-texture"/></g>
+              <g class="bunny-foot-right" clip-path="url(#clip-foot-right)"><use href="#bunny-texture"/></g>
+            </g>
+          </svg>
+        </button>
+        <div id="surprise-particles" class="surprise-particles" aria-hidden="true"></div>
+        <div class="tap-note" aria-hidden="true"><span>tap, tap!</span><svg viewBox="0 0 65 42"><path d="M60 6C44 4 27 12 19 31M11 22l7 12 13-6"/></svg></div>
+        <div class="stage-signature" aria-hidden="true">nwjjyy <span>the little bunny</span></div>
+      </div>
+      <p class="sr-only" id="interaction-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <div class="chapter-divider section-wrap" aria-hidden="true"><span>一点点可爱，一点点珍藏</span><span class="divider-line"></span><span>SCROLL TO EXPLORE <span class="down-arrow">↓</span></span></div>
+
+    <section class="voice-section section-wrap" id="voice" aria-labelledby="voice-heading">
+      <div class="section-intro voice-intro">
+        <span class="chapter-number">01 / SOUND</span>
+        <h2 id="voice-heading">听听我们的声音<span class="title-dot">.</span></h2>
+        <p>有些瞬间，闭上眼睛也能想起。</p>
+        <svg class="sound-doodle" viewBox="0 0 110 48" aria-hidden="true"><path d="M5 29c21 8 21-17 38-14 15 3 15 18 29 14 10-3 14-12 25-11M89 10l12 7-8 10"/></svg>
+      </div>
+      <div class="audio-card">
+        <div class="record-art" aria-hidden="true"><div class="record-ring"></div><div class="record-center"><img src="./assets/icons/bunny-mark.svg" width="25" height="30" alt=""></div><span class="record-glint"></span></div>
+        <div class="audio-content">
+          <div class="audio-topline"><span class="small-label">一段声音，一份珍藏</span><span class="waiting-badge">声音信箱</span></div>
+          <h3 id="audio-title">专属声音，待收藏</h3>
+          <p id="audio-status" role="status">等一段特别的声音到来。</p>
+          <div class="audio-controls">
+            <button class="audio-play" id="audio-play" type="button" aria-label="声音尚未添加" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-symbol" d="m9 5 11 7-11 7Z"/><path class="pause-symbol" d="M8 5h3v14H8zM15 5h3v14h-3z"/></svg></button>
+            <div class="audio-track"><label class="sr-only" for="audio-progress">声音播放进度</label><input id="audio-progress" class="audio-progress" type="range" min="0" max="100" step="0.1" value="0" disabled><div class="audio-time"><span id="audio-current">0:00</span><span id="audio-duration">0:00</span></div></div>
+          </div>
+          <audio id="memory-audio" preload="none"></audio>
+        </div>
+      </div>
+    </section>
+
+    <section class="memories-section section-wrap" id="memories" aria-labelledby="memories-heading">
+      <div class="memories-heading-row">
+        <div class="section-intro"><span class="chapter-number">02 / LITTLE MOMENTS</span><h2 id="memories-heading">我们的记忆<span class="title-dot">.</span></h2><p>把喜欢的日子，装进小小的世界里。</p></div>
+        <span class="handwritten-note">故事，慢慢填满 <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3v22M3 14h22M6 6l16 16M22 6 6 22"/></svg></span>
+      </div>
+      <div class="memory-grid" id="memory-grid">
+        <figure class="memory-card"><div class="memory-placeholder" aria-hidden="true"><span class="placeholder-line-art">＋</span></div><figcaption><span class="memory-index">01</span><h3>等一张合照</h3><p>照片待添加</p></figcaption></figure>
+        <figure class="memory-card"><div class="memory-placeholder" aria-hidden="true"><span class="placeholder-line-art">＋</span></div><figcaption><span class="memory-index">02</span><h3>留住小日常</h3><p>照片待添加</p></figcaption></figure>
+        <figure class="memory-card"><div class="memory-placeholder" aria-hidden="true"><span class="placeholder-line-art">＋</span></div><figcaption><span class="memory-index">03</span><h3>下一次出发</h3><p>照片待添加</p></figcaption></figure>
+      </div>
+      <div class="keepsake-row">
+        <article class="note-card"><span class="note-tape" aria-hidden="true"></span><span class="small-label">A NOTE FOR LATER</span><h3 id="note-title">留一页，给以后</h3><p id="note-text">这里还没有写下故事。等一个值得记住的瞬间，再慢慢填上。</p><span class="note-signature" aria-hidden="true">with little joys, nwjjyy</span></article>
+        <article class="anniversary-card"><svg class="calendar-icon" viewBox="0 0 40 44" fill="none" aria-hidden="true"><rect x="4" y="8" width="32" height="32" rx="7"/><path d="M4 18h32M12 3v10M28 3v10M13 26h4M23 26h4M13 32h4"/></svg><div><span class="small-label" id="anniversary-label">属于我们的纪念日</span><h3 id="anniversary-value">日期待填写</h3><p id="anniversary-note">给一个特别的日子，留个位置。</p></div><span class="calendar-sparkle" aria-hidden="true">✧</span></article>
+      </div>
+    </section>
+
+    <aside class="closing-note section-wrap"><img src="./assets/icons/bunny-mark.svg" width="27" height="32" alt=""><p>这个小世界，慢慢长大。</p><span>每次相见，都有一点可爱。</span></aside>
+  </main>
+
+  <footer class="site-footer section-wrap"><a class="footer-brand" href="#home">nwjjyy<span> little things, lovely memories.</span></a><span>小兔在这里 · 1.0 <span aria-hidden="true">✧</span></span></footer>
+  <noscript><p class="noscript-note">小兔子的互动需要开启 JavaScript。你仍然可以浏览这个小世界。</p></noscript>
+</body>
+</html>
