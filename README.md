@@ -10,7 +10,7 @@
 
 当前采用 **GitHub Pages 免费发布路线**：使用 GitHub 免费账号的公开仓库和平台提供的 `github.io` HTTPS 地址，无需购买独立域名。生产地址以 GitHub Pages 设置页面返回的地址为准。部署成功与目标用户可以访问是两项不同的检查。
 
-当前仓库：[spirity11111/nwjjyy](https://github.com/spirity11111/nwjjyy)。对应的生产目标地址为 [nwjjyy](https://spirity11111.github.io/nwjjyy/)，首次启用与实际可用状态以仓库 Settings → Pages 的部署结果为准。
+当前仓库：[Jwnyykx/nwjjyy](https://github.com/Jwnyykx/nwjjyy)。正式网站：[nwjjyy](https://jwnyykx.github.io/nwjjyy/)。已于 2026-11-01 从 `main` 分支根目录发布，GitHub Pages 显示上线，HTTPS 已启用；网页、样式、脚本和兔子图片在线读取正常。
 
 网站运行只需要本地 HTML、CSS、JavaScript 和图片，没有向 ChatGPT、OpenAI、外部字体或第三方 API 发起运行时请求。已准备独立托管 ZIP：`output/nwjjyy-independent-1.0.zip`，其最外层直接包含 `index.html`，没有 Sites 托管清单、凭据或测试文件。导出步骤及腾讯云迁移流程见 [独立部署说明](DEPLOY-INDEPENDENT.md)。
 
@@ -34,7 +34,7 @@ GitHub Pages 地址也必须先在目标手机关闭 VPN 后，分别使用移�
 - 通过仅存在于测试浏览器网络响应中的短静音素材，验证 HTML5 audio 的播放、暂停、继续和进度跳转。测试素材没有保存为项目音频，也没有代替真实录音交付。
 - JavaScript 语法检查通过；HTML 标识不重复，本地资源、页内锚点和 SVG 裁切引用检查通过。
 
-验证范围是桌面浏览器与手机视口模拟。实际 iPhone Safari、Android 浏览器、最终 GitHub Pages HTTPS 地址和 NTAG215 实物读卡，仍需要在添加内容及确认发布后实机验收。
+验证范围是桌面浏览器与手机视口模拟；GitHub Pages 正式 HTTPS 地址的页面和资源也已在线检查。实际 iPhone Safari、Android 浏览器在目标网络中的访问，以及 NTAG215 实物读卡，仍需实机验收。
 
 ## 本地预览
 
@@ -144,7 +144,7 @@ audio: {
 
 ## 发布到 GitHub Pages
 
-以下是手动发布教程，不表示已经发布。先在本地确认内容，再由仓库所有者执行。
+本项目已发布到上方的正式地址，当前使用 `main` 分支与 `/(root)`。下面保留从零发布教程，方便维护或在其他仓库复用；现有站点更新只需在原仓库提交修改。
 
 ### 1. 创建仓库并上传
 
