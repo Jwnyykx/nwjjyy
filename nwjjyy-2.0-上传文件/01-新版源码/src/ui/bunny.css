@@ -1,0 +1,23 @@
+.bunny-corner{display:grid;justify-items:center;padding:26px 0 12px}
+.bunny-stage{width:min(232px,86vw);aspect-ratio:1;position:relative;display:grid;place-items:center}
+.bunny-button{border:0;background:none;padding:0;width:72%;height:auto;line-height:0;touch-action:manipulation}
+.bunny-model{width:100%;overflow:visible}
+.bunny-speech{position:absolute;top:12%;right:0;background:#fffdfb;border:1px solid var(--line);border-radius:15px 15px 15px 3px;padding:7px 13px;font-size:.875rem;color:var(--accent);pointer-events:none}
+.bunny-spark{position:absolute;right:12%;top:43%;color:#a5798e;animation:bunny-spark 1.2s ease-out infinite;pointer-events:none}
+.bunny-character{transform-origin:600px 1210px}
+.bunny-ear-left,.bunny-ear-right,.bunny-foot-left,.bunny-foot-right,.bunny-eye-left,.bunny-eye-right{transform-box:view-box}
+.bunny-ear-left{transform-origin:320px 290px}.bunny-ear-right{transform-origin:850px 290px}
+.bunny-eye-left{transform-origin:438px 445px}.bunny-eye-right{transform-origin:749px 428px}
+.bunny-eye-left,.bunny-eye-right{animation:book-bunny-blink 5.5s infinite}
+.bunny-foot-left{transform-origin:460px 1160px}.bunny-foot-right{transform-origin:730px 1160px}
+[data-stepping=true] .bunny-character{animation:book-bunny-step .22s ease-in-out infinite}
+[data-stepping=true] .bunny-foot-left{animation:book-foot-tap .22s ease-in-out infinite}
+[data-stepping=true] .bunny-foot-right{animation:book-foot-tap .22s ease-in-out -.11s infinite}
+[data-stepping=true] .bunny-ear-left{animation:book-ear-jiggle .44s ease-in-out infinite}
+[data-stepping=true] .bunny-ear-right{animation:book-ear-jiggle .44s ease-in-out -.22s infinite reverse}
+.bunny-blush{opacity:0}[data-surprise=true] .bunny-blush{opacity:1}
+@keyframes book-bunny-blink{0%,42%,46%,76%,80%,100%{transform:scaleY(1)}44%,78%{transform:scaleY(.1)}}
+@keyframes book-bunny-step{0%,100%{transform:translate(-2px,0) rotate(-1deg)}50%{transform:translate(2px,-4px) rotate(1deg)}}
+@keyframes book-foot-tap{0%,100%{transform:translate(0,0) rotate(0)}45%{transform:translate(-5px,-30px) rotate(-6deg)}70%{transform:translate(2px,2px) rotate(2deg)}}
+@keyframes book-ear-jiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}
+@keyframes bunny-spark{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}

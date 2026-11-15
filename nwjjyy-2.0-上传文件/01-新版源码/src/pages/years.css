@@ -1,0 +1,83 @@
+.annual-page {
+  --annual-ink: #422a37;
+  --annual-paper: #fbf6ee;
+  --annual-line: #dacdce;
+}
+.annual-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.annual-top h1 { margin: 0 0 7px; color: var(--annual-ink); font-size: clamp(2.15rem, 5vw, 4rem); }
+.annual-top p { margin: 0; color: var(--muted); }
+.year-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 8px; margin-bottom: 17px; }
+.year-controls label { min-width: min(155px, 45vw); }
+.annual-book {
+  border: 1px solid var(--annual-line);
+  background: var(--annual-paper);
+  color: var(--annual-ink);
+  padding: clamp(13px, 4.4vw, 46px);
+}
+.annual-cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  align-items: stretch;
+  background: #eaddd8;
+}
+.annual-cover-illustration { min-width: 0; min-height: 270px; position: relative; }
+.annual-cover-illustration > img, .annual-cover-illustration > .private-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.annual-cover-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 39px);
+}
+.annual-year { font-family: Georgia, serif; font-size: clamp(3rem, 8vw, 6.6rem); line-height: .93; letter-spacing: -.06em; }
+.annual-cover-legend h2 { margin-block: 8px 4px; font-size: clamp(1.5rem, 3.4vw, 2.65rem); }
+.annual-cover-legend p { color: var(--muted); margin: 4px 0; }
+.annual-cover-legend .text-button { align-self: start; }
+.annual-section { margin-top: clamp(24px, 4.4vw, 45px); }
+.annual-heading {
+  display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap;
+  border-bottom: 1px solid var(--annual-line); gap: 0 10px; margin-bottom: 12px; padding-bottom: 4px;
+}
+.annual-heading h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); }
+.annual-photos, .annual-stories { display: grid; gap: clamp(10px, 2vw, 19px); }
+.annual-photos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.annual-stories { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.annual-photos figure { margin: 0; min-width: 0; }
+.annual-photos figure > div { aspect-ratio: 1.36; position: relative; }
+.annual-photos .private-image { position: absolute; inset: 0; width: 100%; height: 100%; }
+.annual-photos figcaption { padding-top: 6px; color: var(--muted); font-size: .77rem; overflow-wrap: anywhere; }
+.annual-section > p.field-help { margin-bottom: 0; }
+.annual-marginalia {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px;
+  margin-top: 24px; padding-top: 17px; border-top: 1px solid var(--annual-line);
+}
+.annual-marginalia section { min-width: 0; }
+.annual-marginalia h2 { display: flex; align-items: center; gap: 6px; font-size: 1.13rem; margin: 0; }
+.annual-marginalia ul { list-style: none; margin: 9px 0 0; padding: 0; }
+.annual-marginalia li { display: grid; gap: 2px; border-top: 1px solid var(--annual-line); padding: 7px 0; overflow-wrap: anywhere; }
+.annual-marginalia time { color: var(--muted); font-size: .76rem; }
+.annual-marginalia strong { font-size: .9rem; }
+@media (max-width: 730px) {
+  .annual-photos, .annual-stories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 500px) {
+  .annual-cover, .annual-stories { grid-template-columns: minmax(0, 1fr); }
+  .annual-cover-illustration { min-height: 0; aspect-ratio: 1.52; }
+}
+@media print {
+  body:has(.annual-page) { background: #fff; color: #241a1f; }
+  body:has(.annual-page) :is(.site-header, .private-footer, .mobile-nav, .skip-link, .local-preview-note) { display: none; }
+  body:has(.annual-page) .book-main { width: 100%; margin: 0; }
+  .annual-page { padding: 0; }
+  .annual-page :is(.annual-top, .year-controls, .text-button, .image-retry) { display: none; }
+  .annual-book { border: 0; padding: 0; background: #fff; }
+  .annual-cover, .annual-photos figure, .annual-stories .story-card, .annual-marginalia section { break-inside: avoid; }
+  .annual-cover { border: 1px solid #bcb0b5; grid-template-columns: 1fr 1fr; }
+  .annual-cover-illustration { min-height: 200px; }
+}
