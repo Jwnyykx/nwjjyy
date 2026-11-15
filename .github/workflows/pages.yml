@@ -1,0 +1,72 @@
+name: Storybook
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: ['codex/**', main]
+  workflow_dispatch:
+
+env:
+  STORYBOOK_DIR: nwjjyy-2.0-上传文件/01-新版源码
+
+permissions:
+  contents: read
+
+concurrency:
+  group: storybook-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Prepare the uploaded storybook
+        shell: bash
+        run: |
+          test -f "$STORYBOOK_DIR/package.json"
+          install -D assets/images/bunny-model.png "$STORYBOOK_DIR/assets/images/bunny-model.png"
+          install -D assets/icons/bunny-mark.svg "$STORYBOOK_DIR/assets/icons/bunny-mark.svg"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ${{ env.STORYBOOK_DIR }}/package-lock.json
+      - run: npm --prefix "$STORYBOOK_DIR" ci
+      - run: npm --prefix "$STORYBOOK_DIR" run typecheck
+      - run: npm --prefix "$STORYBOOK_DIR" test
+      - name: Require production configuration
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PAGES_RELEASE == 'true'
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$VITE_SUPABASE_URL" ] || [ -z "$VITE_SUPABASE_PUBLISHABLE_KEY" ]; then
+            echo "::error::Set the Supabase project URL and publishable key before deploying."
+            exit 1
+          fi
+      - run: npm --prefix "$STORYBOOK_DIR" run build
+        env:
+          VITE_SUPABASE_URL: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PAGES_RELEASE == 'true' && vars.VITE_SUPABASE_URL || '' }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PAGES_RELEASE == 'true' && vars.VITE_SUPABASE_PUBLISHABLE_KEY || '' }}
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PAGES_RELEASE == 'true'
+        with:
+          path: ${{ env.STORYBOOK_DIR }}/dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PAGES_RELEASE == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy storybook
+        id: deploy
+        uses: actions/deploy-pages@v4

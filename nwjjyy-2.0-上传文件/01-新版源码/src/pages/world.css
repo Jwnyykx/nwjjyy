@@ -1,0 +1,44 @@
+.city-map {
+  border: 1px solid #b4a0a9;
+  border-radius: 16px;
+  background: #442e3c;
+  color: #f6ecdf;
+  overflow: hidden;
+  margin-block: 20px;
+}
+.city-route {
+  position: relative;
+  min-height: clamp(255px, 36vw, 380px);
+  background: radial-gradient(ellipse at 16% 80%, #6d485c, transparent 60%), radial-gradient(ellipse at 100% 0, #74574e, transparent 58%);
+}
+.city-route svg:not(.city-pin svg) {
+  position: absolute;
+  inset: 12% 2% 6%;
+  width: 96%;
+  height: 82%;
+  color: #dfbba9;
+}
+.city-pin {
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  min-width: 76px;
+  min-height: 68px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: #fff6e8;
+  border: 1px solid #e2b9a7;
+  border-radius: 12px;
+  color: #462b39;
+  font-weight: 700;
+  box-shadow: 0 10px 25px #20112066;
+}
+.city-pin[aria-pressed=true], .city-pin:hover { background: #e7c4b9; }
+.city-pin:nth-of-type(1) { left: 18%; top: 65%; }
+.city-pin:nth-of-type(2) { left: 82%; top: 35%; }
+.city-choices { display: flex; flex-wrap: wrap; padding: 14px; gap: 7px; border-top: 1px solid #ffffff28; }
+.city-choices button[aria-pressed=true] { background: #e7c4b9; }
+.trip-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 16px; margin-top: 18px; }
+.trip-card { display: grid; align-content: start; gap: 10px; background: #faf3e9; }
+.trip-card h2 a:hover { text-decoration: underline; }
+.post-station { display: grid; place-items: center; background: radial-gradient(ellipse at 50% 90%, #f0d8be, #dfcbd7); border-radius: 14px; border: 1px solid #d8c0c7; }

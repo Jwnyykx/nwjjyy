@@ -1,0 +1,98 @@
+.letters-page {
+  --letter-ink: #422a37;
+  --letter-paper: #f5eee5;
+  --letter-line: #dbccc1;
+  color: var(--letter-ink);
+  max-width: 960px;
+  margin-inline: auto;
+}
+.letter-hero {
+  padding: clamp(20px, 4vw, 54px) 0 clamp(27px, 5vw, 57px);
+  border-bottom: 1px solid var(--letter-line);
+}
+.letter-hero-icon {
+  display: inline-grid; place-items: center; aspect-ratio: 1; width: 58px; margin-bottom: 13px;
+  border-radius: 50%; color: #ffeadd; background: var(--letter-ink);
+}
+.letter-hero h1, .letter-sheet-heading h2 {
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-weight: 700; letter-spacing: .04em; margin-block: .1em .4em;
+}
+.letter-hero h1 { font-size: clamp(34px, 5.6vw, 58px); }
+.letter-hero p { margin-block: 0 1.1rem; color: var(--muted); }
+.letter-hero .actions, .letter-sheet .actions { flex-wrap: wrap; }
+.letter-tabs {
+  display: flex; gap: 6px; align-items: center; margin-block: 18px 22px;
+  overflow-x: auto; white-space: nowrap; scrollbar-width: thin;
+}
+.letter-tabs a {
+  color: var(--muted); padding: 10px clamp(12px, 3vw, 24px); border-bottom: 2px solid transparent;
+  line-height: 1.3; min-height: 44px; align-content: center;
+}
+.letter-tabs a[aria-current="page"] { border-color: #754d61; color: var(--letter-ink); font-weight: 700; }
+.letter-list { display: grid; gap: 12px; }
+.letter-list-card {
+  display: grid; grid-template-columns: clamp(76px, 16vw, 134px) minmax(0, 1fr) auto; align-items: center;
+  gap: clamp(9px, 2vw, 22px); color: inherit; padding: clamp(9px, 2vw, 18px); border: 1px solid var(--letter-line);
+  border-radius: 12px; background: #fffaf5; text-decoration: none; transition: border-color .18s, background-color .18s;
+}
+.letter-list-card:hover { border-color: #a18496; background: #faf3ef; }
+.letter-list-copy { display: grid; gap: 3px; min-width: 0; }
+.letter-list-copy strong { font-size: clamp(16px, 2.5vw, 23px); overflow-wrap: anywhere; }
+.letter-meta { color: #6c5461; font-size: .86rem; overflow-wrap: anywhere; }
+.letter-envelope {
+  background: var(--paper-color, #ecdce4); color: var(--paper-ink, #684252);
+  aspect-ratio: 3 / 2; width: 100%; position: relative; display: grid; place-items: center;
+  border: 1px solid #8e738452; border-radius: 7px; overflow: hidden;
+}
+.letters-page [data-paper="rose"] { --paper-color: #f3dad7; --paper-ink: #783f47; }
+.letters-page [data-paper="kraft"] { --paper-color: #ecdcc2; --paper-ink: #5d4632; }
+.letter-envelope-flap {
+  position: absolute; inset: 0; background: #ffffff42; clip-path: polygon(0 0, 100% 0, 50% 61%);
+}
+.letter-envelope-stamp {
+  width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;
+  color: #fff9f2; background: var(--paper-ink, #684252); position: relative; top: -5%;
+}
+.letter-envelope-note { z-index: 1; position: absolute; bottom: 6%; font-size: clamp(.66rem, 2vw, .82rem); }
+.letter-pagination { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.letter-sheet {
+  margin-block: 12px 24px; padding: clamp(16px, 5vw, 50px); border: 1px solid var(--letter-line); border-radius: 13px;
+  background: linear-gradient(130deg, #fffbf4 40%, var(--letter-paper) 100%);
+}
+.letter-sheet-heading { padding-bottom: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--letter-line); }
+.letter-sheet-heading h2 { font-size: clamp(26px, 4vw, 43px); overflow-wrap: anywhere; }
+.letter-sheet-heading time { color: var(--muted); font-size: .88rem; }
+.letter-theme-group, .letter-delivery { margin: 2px 0; padding: 14px 0; border: 0; border-top: 1px solid var(--letter-line); min-inline-size: 0; }
+.letter-theme-group legend, .letter-delivery legend { padding-right: 8px; font-weight: 700; font-size: .91rem; }
+.letter-theme-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.letter-theme-group label {
+  display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-radius: 7px;
+  background: var(--paper-color, #ecdce4); color: var(--paper-ink, #684252);
+}
+.letter-theme-group input, .letter-delivery input[type="radio"] { width: 18px; min-height: auto; margin: 0; accent-color: #754d61; }
+.letter-delivery { display: grid; gap: 10px; }
+.letter-delivery .check { flex-wrap: wrap; line-height: 1.45; }
+.letter-confirm { padding: 14px; border: 1px solid var(--letter-line); background: #f6eee8; border-radius: 8px; }
+.letter-confirm p { margin-block: 0 8px; }
+.letter-opening { display: grid; gap: 18px; justify-items: center; text-align: center; }
+.letter-opening .letter-envelope { max-width: 300px; }
+.letter-opening .letter-envelope-stamp { width: 52px; height: 52px; }
+.letter-opening p, .letter-capsule-note { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.letter-capsule-note { justify-content: start; color: #6c5461; font-size: .92rem; }
+.letter-body { font-family: "Noto Serif SC", "Songti SC", SimSun, serif; font-size: clamp(16px, 2.4vw, 19px); white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.95; margin-block: 22px 25px; }
+.letter-read-actions { border-top: 1px solid var(--letter-line); padding-top: 15px; }
+.letter-just-opened .letter-body { animation: letter-unfold .42s ease-out both; }
+.letter-export { margin-block-start: 24px; border-top: 1px solid var(--letter-line); padding-block-start: 8px; }
+.letter-file-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); gap: 12px; }
+.letter-file-fields input { max-width: 100%; width: 100%; font-size: .86rem; }
+.letter-attachment-list { list-style: none; padding: 0; margin-block: 4px 0; }
+.letter-attachment-list li { display: flex; gap: 12px; align-items: center; justify-content: space-between; border-top: 1px solid var(--letter-line); }
+.letter-attachment-list li > span { display: flex; gap: 8px; align-items: center; overflow-wrap: anywhere; min-width: 0; }
+.letter-attachment-list li > span svg { flex: none; }
+.letter-attachment-list li button { white-space: nowrap; }
+.letter-media { display: grid; gap: 12px; margin-bottom: 22px; }
+.letter-attachment img { display: block; max-height: 680px; border-radius: 8px; object-fit: contain; }
+.letter-attachment audio { width: min(100%, 440px); display: block; }
+@keyframes letter-unfold { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .letter-just-opened .letter-body { animation: none; } }
